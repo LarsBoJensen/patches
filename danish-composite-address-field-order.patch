@@ -1,0 +1,26 @@
+diff --git a/src/Element/WebformAddress.php b/src/Element/WebformAddress.php
+index d4f0a7c..eb0ed53 100644
+--- a/src/Element/WebformAddress.php
++++ b/src/Element/WebformAddress.php
+@@ -22,6 +22,10 @@ class WebformAddress extends WebformCompositeBase {
+       '#type' => 'textfield',
+       '#title' => t('Address 2'),
+     ];
++    $elements['postal_code'] = [
++      '#type' => 'textfield',
++      '#title' => t('Zip/Postal Code'),
++    ];
+     $elements['city'] = [
+       '#type' => 'textfield',
+       '#title' => t('City/Town'),
+@@ -31,10 +35,6 @@ class WebformAddress extends WebformCompositeBase {
+       '#title' => t('State/Province'),
+       '#options' => 'state_province_names',
+     ];
+-    $elements['postal_code'] = [
+-      '#type' => 'textfield',
+-      '#title' => t('Zip/Postal Code'),
+-    ];
+     $elements['country'] = [
+       '#type' => 'select',
+       '#title' => t('Country'),
