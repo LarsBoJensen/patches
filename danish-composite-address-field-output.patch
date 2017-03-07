@@ -1,0 +1,32 @@
+diff --git a/src/Plugin/WebformElement/WebformAddress.php b/src/Plugin/WebformElement/WebformAddress.php
+index 721c53b..75e7a53 100644
+--- a/src/Plugin/WebformElement/WebformAddress.php
++++ b/src/Plugin/WebformElement/WebformAddress.php
+@@ -55,20 +55,19 @@ class WebformAddress extends WebformCompositeBase {
+       $lines['address_2'] = $value['address_2'];
+     }
+     $location = '';
+-    if (!empty($value['city'])) {
+-      $location .= $value['city'];
+-    }
+-    if (!empty($value['state_province'])) {
+-      $location .= ($location) ? ', ' : '';
+-      $location .= $value['state_province'];
+-    }
+     if (!empty($value['postal_code'])) {
+-      $location .= ($location) ? '. ' : '';
+       $location .= $value['postal_code'];
+     }
++    if (!empty($value['city'])) {
++      $location .= ($location) ? ' ' : '';
++      $location .= $value['city'];
++    }
+     if ($location) {
+       $lines['location'] = $location;
+     }
++    if (!empty($value['state_province'])) {
++      $lines['state_province'] = $value['state_province'];
++    }
+     if (!empty($value['country'])) {
+       $lines['country'] = $value['country'];
+     }
